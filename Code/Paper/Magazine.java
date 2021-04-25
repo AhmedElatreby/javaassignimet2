@@ -1,8 +1,8 @@
-package Library.Paper;
+package Code.Paper;
 
 import java.util.ArrayList;
 
-import Library.People.Author;
+import Code.Library.People.Author;
 
 public class Magazine extends Paper 
 {

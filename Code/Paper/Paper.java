@@ -1,16 +1,15 @@
-package Library.Paper;
+package Code.Paper;
 
 import java.util.ArrayList;
 
-import Library.Publication;
-import Library.People.Author;
+import Code.Library.Publication;
+import Code.Library.People.Author;
 
 public abstract class Paper extends Publication {
 
     private int issue = 1;
     private int isbn;
 
-    // CHANGED THE ORDER OF THE SUPER
     public Paper(String title, int id, ArrayList<Author> authors, String edition, double price, int issue, int isbn) 
     {
         super(title, id, authors, edition, price);
@@ -18,11 +17,11 @@ public abstract class Paper extends Publication {
         this.issue = issue;
     }
 
-    // public Paper(String title, int id, String edition, Author author, Publisher
-    // publisher, double price, Availability availability, String type) {
-    // super(title, id, edition, author, publisher, availability);
-    // this.isbn = isbn;
-    // }
+    // overloading 
+    public Paper(String title, int id, ArrayList<Author> authors, String edition,  double price, String type) {
+    super(title, id, authors, edition, price);
+    this.isbn = isbn;
+    }
 
     /**
      * @return 

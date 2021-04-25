@@ -1,10 +1,10 @@
-package Library;
+package Code.Library;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import Library.People.Author;
+import Code.Library.People.Author;
 
 public abstract class Publication {
 
@@ -80,15 +80,13 @@ public abstract class Publication {
      */
     public String getReturnDate() {
         if (isAvailable) {
-            return " Is Available: " + this.returnDate;
+            return "Is Available: " + this.returnDate;
         } else {
             Calendar date = Calendar.getInstance();
             date.setTime(new Date());
             date.add(Calendar.DAY_OF_WEEK, 14);
             return "Return Date: " + date.getTime();
-
         }
-
     }
 
     /**
@@ -102,7 +100,7 @@ public abstract class Publication {
      * @return double
      */
     public String getPrice() {
-        return String.format("Price: £%.2f" , this.price);
+        return String.format("Price: £%.2f", this.price);
     }
 
     /**
@@ -110,16 +108,18 @@ public abstract class Publication {
      */
 
     public String details() {
-        return String.format("Paper Name: %s%nEdition: %s%nID Number: %d%nPrice: £%.2f", this.title, this.edition,
-                this.id, this.price);
+        return String.format("%s%nEdition: %s%nID Number: %d%nPrice: £%.2f", this.getTitle(), this.edition, this.id,
+                this.price);
 
     }
 
     public boolean stringAvailabilty() {
         if (this.isAvailable == true) {
-            return this.isAvailable;
+            return this.isAvailable = true;
         } else {
-            return this.isAvailable;
+            System.out.println(getReturnDate());
+            return  this.isAvailable = false;
+
         }
 
     }

@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 
-import Library.*;
-import Library.Paper.Magazine;
-import Library.Paper.Newspaper;
-import Library.People.*;
+import Code.Library.Book;
+import Code.Library.Publisher;
+import Code.Library.People.Author;
+import Code.Paper.Magazine;
+import Code.Paper.Newspaper;
 
 public class Application {
 
@@ -24,20 +25,18 @@ public class Application {
         ArrayList<Author> authors = new ArrayList<>();
         authors.add(new Author("Test author", "March"));
         authors.add(new Author("Test author 2", "October"));
-
         Book book = new Book("test book", 14, authors, "2nd", 444, 66, 2, "It was good");
         Author authour = new Author("Ahmed", "10/10/1980");
         System.out.println(book.details());
         System.out.println(book.getReview());
         System.out.println(authour.getAuthorDetails());
-        // System.out.println("Availability: " + book.stringAvailabilty());
         book.setAvailability(false);
         System.out.println("Availability: " + book.stringAvailabilty());
-        System.out.println(book.getReturnDate());
     }
 
     public static void publisherTest() {
-
+        
+        
         Publisher publisher = new Publisher("Ahmed", "10/05/1981", "Is very good book");
         System.out.println(publisher.getPublisherName());
         System.out.println(publisher.getPublisherDate());
@@ -47,6 +46,7 @@ public class Application {
 
     public static void magazinerTest() {
 
+        // CREATE A SAMPLE ARRAY LIST OF AUTHORS
         ArrayList<Author> authors = new ArrayList<>();
         authors.add(new Author("Ahmed", "10/10/1950"));
         Magazine magazine = new Magazine("PC World", 25, authors, "3rd", 3.6, 3, 123456, "Computing");
@@ -60,25 +60,21 @@ public class Application {
         System.out.println(magazine.getType());
     }
 
-    public static void newspaperTest(){
+    public static void newspaperTest() {
+
+        // CREATE A SAMPLE ARRAY LIST OF AUTHORS
         ArrayList<Author> authors = new ArrayList<>();
-        Author a = new Author("Ahmed", "10/10/1950");        
-        
-        // authors.add(new Author("Ahmed", "10/10/1950"));
-        Newspaper newspaper = new Newspaper("The Sun", 154, authors, "5th", .99, 2598, 85547452);
+        Author a = new Author("Ahmed", "10/10/1950");
+        Newspaper newspaper = new Newspaper("The Sun", 154, authors, "5th", .99, 2598, 85547452, 16);
         System.out.println(newspaper.getTitle());
         System.out.println(newspaper.getID());
-        // For (Author author: authors)
-        //     {
-        //         System.out.println(newspaper.getAuthorName());
-        //     }
         System.out.println(a.getAuthorName());
         System.out.println(newspaper.getEdition());
+        System.out.println(newspaper.getAge());
         System.out.println(newspaper.getPrice());
         System.out.println(newspaper.getIssue());
         System.out.println(newspaper.getIsbn());
-        
 
     }
-    
+
 }

@@ -1,8 +1,8 @@
-package Library;
+package Code.Library;
 
 import java.util.ArrayList;
 
-import Library.People.Author;
+import Code.Library.People.Author;
 
 public class Book extends Publication {
     private String review;
@@ -18,11 +18,11 @@ public class Book extends Publication {
      */
     @Override
     public String getTitle() {
-        return this.title;
+        return "Book Title: " + this.title;
     }
 
     public String getReview() {
-        return "Revview: " + this.review;
+        return "Review: " + this.review;
     }
 
 }

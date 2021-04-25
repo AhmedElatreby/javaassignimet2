@@ -1,4 +1,4 @@
-package Library.People;
+package Code.Library.People;
 
 // this class hold information about the Author
 public class Author {
