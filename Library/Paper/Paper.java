@@ -28,16 +28,16 @@ public abstract class Paper extends Publication {
      * @return 
      * @return int
      */
-    public int getIssue() 
+    public String getIssue() 
     {
-        return this.issue;
+        return "Issue Number: " + this.issue;
     }
 
     /**
      * @param isbn
      */
-    public int getIsbn() 
+    public String getIsbn() 
     {
-        return this.isbn;
+        return "ISBN Number: " + this.isbn;
     } 
 }

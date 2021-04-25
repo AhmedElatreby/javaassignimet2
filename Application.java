@@ -2,11 +2,23 @@ import java.util.ArrayList;
 
 import Library.*;
 import Library.Paper.Magazine;
+import Library.Paper.Newspaper;
 import Library.People.*;
 
 public class Application {
 
     public static void main(String[] args) {
+        bookTest();
+        System.out.println("--------------------------------------------");
+        publisherTest();
+        System.out.println("--------------------------------------------");
+        magazinerTest();
+        System.out.println("--------------------------------------------");
+        newspaperTest();
+
+    }
+
+    public static void bookTest() {
 
         // CREATE A SAMPLE ARRAY LIST OF AUTHORS
         ArrayList<Author> authors = new ArrayList<>();
@@ -14,16 +26,17 @@ public class Application {
         authors.add(new Author("Test author 2", "October"));
 
         Book book = new Book("test book", 14, authors, "2nd", 444, 66, 2, "It was good");
-
+        Author authour = new Author("Ahmed", "10/10/1980");
         System.out.println(book.details());
-        System.out.println("----------------------------------");
-        publisherTest();
-        MagazinerTest();
-
+        System.out.println(book.getReview());
+        System.out.println(authour.getAuthorDetails());
+        // System.out.println("Availability: " + book.stringAvailabilty());
+        book.setAvailability(false);
+        System.out.println("Availability: " + book.stringAvailabilty());
+        System.out.println(book.getReturnDate());
     }
 
     public static void publisherTest() {
-        System.out.println("--------------------------------------------");
 
         Publisher publisher = new Publisher("Ahmed", "10/05/1981", "Is very good book");
         System.out.println(publisher.getPublisherName());
@@ -32,12 +45,11 @@ public class Application {
 
     }
 
-    public static void MagazinerTest() {
-        System.out.println("--------------------------------------------");
+    public static void magazinerTest() {
 
         ArrayList<Author> authors = new ArrayList<>();
         authors.add(new Author("Ahmed", "10/10/1950"));
-        Magazine magazine = new Magazine("PC World", 25, authors, "3rd", 3.6, 3, 123456, "pc");
+        Magazine magazine = new Magazine("PC World", 25, authors, "3rd", 3.6, 3, 123456, "Computing");
         System.out.println(magazine.getTitle());
         System.out.println(magazine.getID());
         System.out.println(magazine.getAuthorName());
@@ -46,8 +58,27 @@ public class Application {
         System.out.println(magazine.getIssue());
         System.out.println(magazine.getIsbn());
         System.out.println(magazine.getType());
-
-
     }
 
+    public static void newspaperTest(){
+        ArrayList<Author> authors = new ArrayList<>();
+        Author a = new Author("Ahmed", "10/10/1950");        
+        
+        // authors.add(new Author("Ahmed", "10/10/1950"));
+        Newspaper newspaper = new Newspaper("The Sun", 154, authors, "5th", .99, 2598, 85547452);
+        System.out.println(newspaper.getTitle());
+        System.out.println(newspaper.getID());
+        // For (Author author: authors)
+        //     {
+        //         System.out.println(newspaper.getAuthorName());
+        //     }
+        System.out.println(a.getAuthorName());
+        System.out.println(newspaper.getEdition());
+        System.out.println(newspaper.getPrice());
+        System.out.println(newspaper.getIssue());
+        System.out.println(newspaper.getIsbn());
+        
+
+    }
+    
 }

@@ -18,11 +18,11 @@ public class Book extends Publication {
      */
     @Override
     public String getTitle() {
-        return "name test";
+        return this.title;
     }
 
     public String getReview() {
-        return this.review;
+        return "Revview: " + this.review;
     }
 
 }
