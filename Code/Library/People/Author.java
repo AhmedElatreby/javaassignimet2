@@ -25,6 +25,10 @@ public class Author {
         return "Author DOB: " + this.DOB;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getAuthorDetails() {
         return getAuthorName() + "\n" + getDOB();
     }

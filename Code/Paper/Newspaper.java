@@ -14,6 +14,10 @@ public class Newspaper extends Paper {
         this.age = age;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getAge()
     {
         return "Age limit: " + this.age + " years old";

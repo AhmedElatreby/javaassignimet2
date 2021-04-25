@@ -21,6 +21,10 @@ public class Book extends Publication {
         return "Book Title: " + this.title;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getReview() {
         return "Review: " + this.review;
     }

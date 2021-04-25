@@ -5,8 +5,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 import Code.Library.People.Author;
+import Code.Library.People.IPublication;
 
-public abstract class Publication {
+public abstract class Publication  implements IPublication{
 
     // create variables
     protected String title;
@@ -29,6 +30,7 @@ public abstract class Publication {
     /**
      * @return String
      */
+    @Override
     public String getTitle() {
         return "Title Name: " + this.title;
     }
@@ -36,6 +38,7 @@ public abstract class Publication {
     /**
      * @return int
      */
+    @Override
     public String getID() {
         return "ID number: " + this.id;
     }
@@ -43,6 +46,7 @@ public abstract class Publication {
     /**
      * @return String
      */
+    @Override
     public String getEdition() {
         return "Edition : " + this.edition;
     }
@@ -50,6 +54,7 @@ public abstract class Publication {
     /**
      * @param returned
      */
+    @Override
     public void setReturnDate(String returned) {
         this.returnDate = returned;
     }
@@ -57,6 +62,7 @@ public abstract class Publication {
     /**
      * @param isAvailable
      */
+    @Override
     public void setAvailability(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }
@@ -64,6 +70,7 @@ public abstract class Publication {
     /**
      * @return boolean
      */
+    @Override
     public boolean getAvailability() {
         return this.isAvailable;
     }
@@ -71,6 +78,7 @@ public abstract class Publication {
     /**
      * @return Publisher
      */
+    @Override
     public Publisher getPublisher() {
         return this.publisher;
     }
@@ -78,6 +86,7 @@ public abstract class Publication {
     /**
      * @return String
      */
+    @Override
     public String getReturnDate() {
         if (isAvailable) {
             return "Is Available: " + this.returnDate;
@@ -92,6 +101,7 @@ public abstract class Publication {
     /**
      * @return ArrayList<Author>
      */
+    @Override
     public ArrayList<Author> getAuthorName() {
         return this.authors;
     }
@@ -99,6 +109,7 @@ public abstract class Publication {
     /**
      * @return double
      */
+    @Override
     public String getPrice() {
         return String.format("Price: £%.2f", this.price);
     }
@@ -106,13 +117,18 @@ public abstract class Publication {
     /**
      * @return String
      */
-
+    @Override
     public String details() {
         return String.format("%s%nEdition: %s%nID Number: %d%nPrice: £%.2f", this.getTitle(), this.edition, this.id,
                 this.price);
 
     }
 
+    
+    /** 
+     * @return boolean
+     */
+    @Override
     public boolean stringAvailabilty() {
         if (this.isAvailable == true) {
             return this.isAvailable = true;

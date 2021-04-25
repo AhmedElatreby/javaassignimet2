@@ -15,6 +15,10 @@ public class Magazine extends Paper
         this.type = type;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getType()
     {
         return "Magazine type: " + this.type;
