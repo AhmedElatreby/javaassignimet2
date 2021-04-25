@@ -5,9 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import Code.Library.People.Author;
-import Code.Library.People.IPublication;
 
-public abstract class Publication  implements IPublication{
+public abstract class Publication implements IPublication {
 
     // create variables
     protected String title;
@@ -124,8 +123,7 @@ public abstract class Publication  implements IPublication{
 
     }
 
-    
-    /** 
+    /**
      * @return boolean
      */
     @Override
@@ -134,7 +132,7 @@ public abstract class Publication  implements IPublication{
             return this.isAvailable = true;
         } else {
             System.out.println(getReturnDate());
-            return  this.isAvailable = false;
+            return this.isAvailable = false;
 
         }
 
