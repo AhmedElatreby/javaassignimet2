@@ -8,20 +8,17 @@ import Code.Library.People.Author;
 public abstract class Paper extends Publication {
 
     private int issue = 1;
-    private int isbn;
 
-    public Paper(String title, int id, ArrayList<Author> authors, String edition, double price, int issue, int isbn) 
+    public Paper(String title, int id, int isbn, ArrayList<Author> authors, String edition, double price, int issue) 
     {
-        super(title, id, authors, edition, price);
-        this.isbn = isbn;
+        super(title, id, isbn, authors, edition, price);
         this.issue = issue;
     }
 
-    // overloading 
-    public Paper(String title, int id, ArrayList<Author> authors, String edition,  double price, String type) {
-    super(title, id, authors, edition, price);
-    this.isbn = isbn;
-    }
+    // // overloading 
+    // public Paper(String title, int id, ArrayList<Author> authors, String edition,  double price, String type) {
+    // super(title, id, isbn, authors, edition, price);
+    // }
 
     /**
      * @return 
@@ -32,11 +29,4 @@ public abstract class Paper extends Publication {
         return "Issue Number: " + this.issue;
     }
 
-    /**
-     * @param isbn
-     */
-    public String getIsbn() 
-    {
-        return "ISBN Number: " + this.isbn;
-    } 
 }

@@ -12,15 +12,17 @@ public abstract class Publication implements IPublication {
     protected String title;
     private Publisher publisher;
     private int id;
-    public ArrayList<Author> authors;
+    protected int isbn;
+    protected ArrayList<Author> authors;
     private boolean isAvailable = true;
     protected String edition;
     protected double price;
     protected String returnDate = null;
 
-    public Publication(String title, int id, ArrayList<Author> authors, String edition, double price) {
+    public Publication(String title, int id, int isbn, ArrayList<Author> authors, String edition, double price) {
         this.title = title;
         this.id = id;
+        this.isbn = isbn;
         this.authors = authors;
         this.edition = edition;
         this.price = price;
@@ -42,12 +44,21 @@ public abstract class Publication implements IPublication {
         return "ID number: " + this.id;
     }
 
+        /**
+     * @param isbn
+     */
+    public String getIsbn() 
+    {
+        return "ISBN Number: " + this.isbn;
+    } 
+
+
     /**
      * @return String
      */
     @Override
     public String getEdition() {
-        return "Edition : " + this.edition;
+        return "Edition: " + this.edition;
     }
 
     /**

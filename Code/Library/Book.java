@@ -9,7 +9,7 @@ public class Book extends Publication {
 
     public Book(String title, int id, ArrayList<Author> authors, String edition, double price, int issue, int isbn,
             String review) {
-        super(title, id, authors, edition, price);
+        super(title, id, isbn, authors, edition, price);
         this.review = review;
     }
 

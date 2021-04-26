@@ -9,9 +9,9 @@ public class Magazine extends Paper
 
     private String type;
 
-    public Magazine(String title, int id, ArrayList<Author> authors, String edition, double price, int issue, int isbn, String type) 
+    public Magazine(String title, int id, int isbn, ArrayList<Author> authors, String edition, double price, int issue, String type) 
     {
-        super(title, id, authors, edition, price, issue, isbn);
+        super(title, id, isbn, authors, edition, price, issue);
         this.type = type;
     }
 
@@ -22,6 +22,14 @@ public class Magazine extends Paper
     public String getType()
     {
         return "Magazine type: " + this.type;
+    }
+
+         /**
+     * @return String
+     */
+    @Override
+    public String getTitle() {
+        return "Magazine Name: " + this.title;
     }
 
 }

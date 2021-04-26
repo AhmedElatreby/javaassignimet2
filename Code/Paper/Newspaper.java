@@ -10,7 +10,7 @@ public class Newspaper extends Paper {
 
     public Newspaper(String title, int id, ArrayList<Author> authors, String edition, double price, int issue, int isbn, int age)
     {
-        super(title, id, authors, edition, price, issue, isbn);
+        super(title, id, isbn, authors, edition, price, issue);
         this.age = age;
     }
 
@@ -21,6 +21,14 @@ public class Newspaper extends Paper {
     public String getAge()
     {
         return "Age limit: " + this.age + " years old";
+    }
+
+       /**
+     * @return String
+     */
+    @Override
+    public String getTitle() {
+        return "Newspaper Name: " + this.title;
     }
 
 
